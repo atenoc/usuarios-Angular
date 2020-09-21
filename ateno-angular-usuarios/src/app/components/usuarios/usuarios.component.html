@@ -1,0 +1,47 @@
+<div class="container mt-5">
+
+    <div class="card mb-5" >
+        <div class="card-header"><h5 class="card-title">Listado de Usuarios Registrados</h5></div>
+        <div class="card-body text-dark">
+          
+      
+      <div class="my-2 text-left">
+          <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/registro-usuario']">Registrar Nuevo Usuario</button>
+      </div>
+      <div class="" *ngIf="usuarios?.length == 0">
+        <div class="alert alert-info" role="alert">
+          No hay usuarios registros en la Base de Datos H2.
+        </div>
+      </div>
+          <table class="table table-bordered table-striped" *ngIf="usuarios?.length > 0">
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Sexo</th>
+                <th>Correo</th>
+              </tr>
+            </thead>
+      
+            <tbody>
+              <tr *ngFor="let usuario of usuarios">
+                <td>{{ usuario.id }}</td>
+                <td>{{ usuario.nombre }}</td>
+                <td>{{ usuario.apellido }}</td>
+                <td>{{ usuario.edad }}</td>
+                <td>{{ usuario.sexo }}</td>
+                <td>{{ usuario.correo}}</td>
+              </tr>
+            </tbody>
+      
+          </table>
+      
+        </div>
+      </div>
+
+</div>
+
+
+  
